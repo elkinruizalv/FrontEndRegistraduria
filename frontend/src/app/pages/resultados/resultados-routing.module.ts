@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   {
     path:"partidosEditar/:id_partido",
-    component:CrearCandidatoComponent
+    component:CrearpartidoComponent
   },
   {
     path:"candidatosListar",
@@ -43,11 +43,11 @@ const routes: Routes = [
   },
   {
     path:"candidatosCrear",
-    component:CrearpartidoComponent
+    component:CrearCandidatoComponent
   },
   {
-    path:"candidatosEditar/:id_partido",
-    component:CrearpartidoComponent
+    path:"candidatosEditar/:id_candidato",
+    component:CrearCandidatoComponent
   },
 ];
 

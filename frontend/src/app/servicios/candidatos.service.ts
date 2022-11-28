@@ -18,7 +18,7 @@ export class CandidatosService {
   eliminar(id:string){
     return this.http.delete<Candidatos>(`${this.url}/${id}`,);
   }
-  getPartido(id:string):Observable<Candidatos>{
+  getCandidato(id:string):Observable<Candidatos>{
     return this.http.get<Candidatos>(`${this.url}/${id}`,);
   }
   crear(elCandidato:Candidatos){

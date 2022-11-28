@@ -1,1 +1,49 @@
-<p>crear-candidato works!</p>
+<app-my-head></app-my-head>
+
+<mat-card class="card2">
+
+  <mat-card-title *ngIf="modoCreacion">
+    CREAR PARTIDO
+  </mat-card-title>
+  <mat-card-title *ngIf="!modoCreacion">
+    ACTUALIZAR PARTIDO
+  </mat-card-title>
+
+      <label>Cedula</label>
+      <input *ngIf="modoCreacion" class="form-control" type="text"
+       [(ngModel)]="elCandidato.cedula" placeholder="Ingrese la cédula" required="true">
+      <p *ngIf="intentoEnvio && elCandidato.cedula==''">Requerido</p>
+
+      <input *ngIf="!modoCreacion" class="form-control" type="text"
+      [(ngModel)]="elCandidato.cedula" disabled="">
+  <br>
+      <label>Numero de Resolucion</label>
+      <input class="form-control" type="text"
+      [(ngModel)]="elCandidato.numero_resolucion" placeholder="Ingrese el numero de resolucion" required="true">
+      <p *ngIf="intentoEnvio && elCandidato.numero_resolucion==''">Requerido</p>
+  <br>
+  <br>
+      <label>Nombre</label>
+      <input class="form-control" type="text"
+      [(ngModel)]="elCandidato.nombre" placeholder="Ingrese el nombre" required="true">
+      <p *ngIf="intentoEnvio && elCandidato.nombre==''">Requerido</p>
+   <br>
+   <br>
+      <label>Apellido</label>
+      <input class="form-control" type="text"
+      [(ngModel)]="elCandidato.apellido" placeholder="Ingrese el apellido" required="true">
+      <p *ngIf="intentoEnvio && elCandidato.apellido==''">Requerido</p>
+   <br>
+
+   <button *ngIf="modoCreacion" mat-raised-button color="primary" (click)="agregrarCandidato()">
+      Crear
+    </button> 
+    <button *ngIf="!modoCreacion" mat-raised-button color="primary" (click)="editarCandidato()">
+        Actualizar
+    </button>
+    <button  mat-raised-button color="warn" (click)="cancelar()">
+        Cancelar
+    </button>
+
+</mat-card>
+
